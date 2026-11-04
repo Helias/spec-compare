@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Fork hosting** (`site/index.html`, `site/src/Disclosure.tsx`) — Removed the Cloudflare analytics beacon, whose token belongs to the original site, and pointed the social preview image at `stefanoborzi.dev/spec-compare`.
+- **Fork hosting** (`site/index.html`, `site/src/Disclosure.tsx`) — Removed the Cloudflare analytics beacon, whose token belongs to the original site, and pointed the social preview image and README link at `stefanoborzi.dev/spec-compare`. The Disclosure page credits Cameron Sjo as the original author and sends issues to the fork.
 
 - Marked the February Conductor snapshot in `docs/gaps.md` as superseded by the August reassessment and tracked profile.
 

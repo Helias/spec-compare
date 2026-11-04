@@ -7,7 +7,7 @@ Independent research comparing **22 spec-driven development (SDD) tools** for AI
 ## 🔮 Live site
 
 An interactive, Artificer-themed visualizer of this research:
-**[cameronsjo.github.io/spec-compare](https://cameronsjo.github.io/spec-compare/)**
+**[stefanoborzi.dev/spec-compare](https://stefanoborzi.dev/spec-compare/)**
 
 - **Compare workflows** — step the same scenario (trivial change, greenfield, refactor, bug fix, parallel dev, cross-cutting) through all nine core tools in lockstep and watch OpenSpec's short path contrast with BMad's long one.
 - **Feature matrix** — sortable, filterable capability table aggregated live from the data.

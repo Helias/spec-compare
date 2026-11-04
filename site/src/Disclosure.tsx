@@ -12,11 +12,16 @@ export function Disclosure() {
         <a className="repo-link" href="https://cameronsjo.github.io/artificer/" target="_blank" rel="noreferrer">
           <b className="anchor">Artificer design system</b>
         </a>
-        , React + Vite. Written by — and with — a spec-driven-development practitioner who uses OpenSpec (which scores
-        well here) and keeps a personal, unreleased rig of their own — cadence — filed down from Superpowers after it
-        felt too rigid. So read the Superpowers assessment with that grain of salt; the scoring still aims to treat
-        every tool on equal terms. Spot a bias or an error?{' '}
-        <a className="repo-link" href="https://github.com/cameronsjo/spec-compare/issues" target="_blank" rel="noreferrer">
+        , React + Vite. This is Stefano Borzi&apos;s fork of{' '}
+        <a className="repo-link" href="https://github.com/cameronsjo/spec-compare" target="_blank" rel="noreferrer">
+          spec-compare
+        </a>{' '}
+        by Cameron Sjo, who wrote the research and scoring for every tool except RPAC. Cameron uses OpenSpec (which
+        scores well here) and keeps a personal, unreleased rig called cadence, filed down from Superpowers after it felt
+        too rigid, so read the Superpowers assessment with that grain of salt. Stefano contributes to agent-toolkit and
+        added the RPAC entry, so the same goes for RPAC. The scoring still aims to treat every tool on equal terms. Spot
+        a bias or an error?{' '}
+        <a className="repo-link" href="https://github.com/Helias/spec-compare/issues" target="_blank" rel="noreferrer">
           Open an issue
         </a>
         .
