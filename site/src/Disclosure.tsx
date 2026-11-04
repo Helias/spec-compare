@@ -22,12 +22,7 @@ export function Disclosure() {
         .
       </p>
       <p className="footer-fine">
-        Analytics: this site uses{' '}
-        <a className="repo-link" href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noreferrer">
-          Cloudflare Web Analytics
-        </a>{' '}
-        — cookieless, aggregate page-view counts only; no cookies are set and no visitor profiles are built. Hosting is
-        GitHub Pages, which logs visitor IP addresses per{' '}
+        Hosting is GitHub Pages, which logs visitor IP addresses per{' '}
         <a
           className="repo-link"
           href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
