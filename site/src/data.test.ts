@@ -5,13 +5,14 @@ import { SCORE_DIMS } from './types'
 // Exercises import.meta.glob auto-discovery + the cross-tool aggregation at runtime —
 // the layer `tsc` can't prove resolves (the matrix/heatmap derive from this).
 describe('tool data aggregation', () => {
-  it('discovers all 21 tools, 8 of them core', () => {
-    expect(tools).toHaveLength(21)
-    expect(coreTools).toHaveLength(8)
+  it('discovers all 22 tools, 9 of them core', () => {
+    expect(tools).toHaveLength(22)
+    expect(coreTools).toHaveLength(9)
     expect(coreTools.map((t) => t.tool).sort()).toEqual([
       'bmad-method',
       'kiro',
       'openspec',
+      'rpac',
       'spec-kit',
       'spec-kitty',
       'superpowers',
