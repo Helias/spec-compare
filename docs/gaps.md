@@ -222,6 +222,27 @@ Promoted to full core profile (May 2026). See [Traycer Tool Profile](tools/trayc
 
 ---
 
+### RPAC (eai-org/agent-toolkit)
+
+**What it is:** An MIT-licensed collection of agent skills (`eai-org/agent-toolkit`, unversioned, assessed at `bc5e2cd`, 2026-11-03) that takes a developer through one task in four phases: Refine, Plan, Act, and Consolidate. The skills are invoked by hand, so nothing enforces the order, and they work with Claude Code, GitHub Copilot, Codex, OpenCode, and others. Submitted by a contributor to agent-toolkit, with the conflict of interest disclosed.
+
+**Why it matters:** It makes the session boundary the main design tool. Each phase runs in a fresh session and hands over a file rather than chat history (`TICKET.md` → `REQUIREMENTS.md` → `PLAN.md` → `HANDOVER.md`), so a full context window never carries over into the next phase. The toolkit's philosophy doc says trivial, well-defined tasks may skip phases.
+
+**Key differentiators:**
+- **Refine (the what):** `fetch-ticket` saves a tracker ticket as a self-contained `TICKET.md`; `refine-ticket` checks it against the code and interviews the developer one question at a time, producing `REQUIREMENTS.md`
+- **Plan (the how):** `create-implementation-plan` studies the code, settles technical decisions with the developer, and writes a self-contained `PLAN.md`
+- **Act, with a review between tasks:** `split-plan-tasks` appends small tasks to the plan, grouped into PR-sized batches; `execute-plan-tasks` runs one task per fresh session, logs deviations in `DECISIONS.md`, and stops for review. It never commits or pushes
+- **Hardening (optional):** `harden-artifact` has a clean-context sub-agent review a requirements doc or a plan, the session running it tries to disprove each finding, and the developer decides on what survives
+- **Consolidate:** `fresh-eyes-review` has a clean-context sub-agent review the changeset, then `handover` writes `HANDOVER.md`, a paste-ready PR description
+
+**Gap assessment:** Profiled at **emerging tier**. Adoption is small: ~110 stars and 20 forks (2026-11-21), repository created 2026-05-25, no tagged releases. The scores are the submitting contributor's proposal, from reading the repository and docs at `bc5e2cd`, not this repository's own assessment. It sits closest to Superpowers and Matt Pocock's Skills. Like Superpowers it goes from a clarified idea through a plan to per-task execution in fresh context, but Superpowers auto-triggers its skills and dispatches subagents to build, while RPAC is invoked by hand and keeps a human review between tasks. Like Pocock's skills it is a small, user-invoked skill collection that interviews first, but Pocock's flow publishes specs and tickets to an issue tracker, while RPAC keeps its documents as local files. Requirements and plans are per-task working files with no maintained living spec, and there is no hotfix path, worktree isolation, or parallel orchestration: sub-agents review, but tasks run one after another. Revisit when the project tags releases and adoption grows.
+
+**Sources:**
+- [GitHub: eai-org/agent-toolkit](https://github.com/eai-org/agent-toolkit) (README, `docs/core-philosophy.md`, `skills/*/SKILL.md` at `bc5e2cd`; verified 2026-11-04)
+- [Task workflow docs](https://eai-org.github.io/agent-toolkit-docs/task-workflow/)
+
+---
+
 ### archiet-microcodegen (marginal)
 
 **What it is:** A single-file, MIT-licensed deterministic code generator (`Anioko/microcodegen`) that compiles a regex-parsed PRD into a bootable Flask app ZIP via `string.Template` rendering — no LLM in the open-source generation path, pure stdlib, zero dependencies. It is the open-source reference component of **archiet.com**, a commercial spec-driven platform (REQARCHITECT LTD). Companion per-stack packages exist on npm (NestJS), PyPI (Flask/Django), Packagist (Laravel), NuGet (.NET), and the Go proxy.
@@ -372,7 +393,7 @@ This paper provides practitioners with a comprehensive guide to SDD, covering pr
 
 ## Related
 
-- [Use Case Scoring — Expanded Heatmap](use-case-scoring.md#expanded-heatmap-including-new-tools) — 23-tool scoring matrix including these frameworks
+- [Use Case Scoring — Expanded Heatmap](use-case-scoring.md#expanded-heatmap-including-new-tools) — 24-tool scoring matrix including these frameworks
 - [Beads + OpenSpec Cheatsheet](cheatsheet-beads-openspec.md) — Practical workflow combining OpenSpec with Beads
 - [Beads](beads.md) — Agent memory layer
 - [Orchestration Landscape](landscape.md) — Agent Teams, multi-agent tools

@@ -1,0 +1,45 @@
+{
+  "tool": "rpac",
+  "displayName": "RPAC (agent-toolkit)",
+  "vendor": "Engineering in the Age of AI (eai-org)",
+  "repo": "https://github.com/eai-org/agent-toolkit",
+  "website": "https://eai-org.github.io/agent-toolkit-docs/task-workflow/",
+  "version": "Unversioned — main @ bc5e2cd",
+  "license": "MIT",
+  "maturity": "Active Dev",
+  "tier": "emerging",
+  "philosophy": "context",
+  "specMaturity": "Spec-First",
+  "tagline": "Refine → Plan → Act → Consolidate: a fresh session per phase, handing over a file.",
+  "bestFor": "Ticket-driven work with a human reviewing each step",
+  "complexity": "Medium",
+  "learningCurve": "Moderate",
+  "features": {
+    "gitWorktrees": false,
+    "multiAgent": "limited",
+    "dashboard": "No",
+    "mcp": false,
+    "ideIntegration": false,
+    "openSource": true,
+    "parallel": false
+  },
+  "scores": { "trivial": 4, "medium": 4, "large": 4, "parallel": 2, "emergency": 2, "solo": 4, "contextMgmt": 5, "overall": 3.6 },
+  "keyFeatures": [
+    "Each phase runs in a fresh session and hands over a file, not chat history: TICKET.md → REQUIREMENTS.md → PLAN.md → HANDOVER.md",
+    "Refine interviews you one question at a time; in both Refine and Plan, anything the code can answer is settled by reading the code",
+    "Optional /harden-artifact: a clean-context sub-agent tests a requirements doc or plan, then your session tries to disprove each finding",
+    "/split-plan-tasks and /execute-plan-tasks run one small task per session and stop for your review; the agent never commits or pushes",
+    "Consolidate: /fresh-eyes-review by a clean-context sub-agent, then /handover writes a paste-ready PR description",
+    "Starts from a tracker ticket or a raw idea; works with Claude Code, GitHub Copilot, Codex, OpenCode, and others",
+    "MIT, ~110 stars; take the whole toolkit or only the skills you want"
+  ],
+  "limitations": [
+    "A skill collection, not a framework: nothing enforces the flow, and each phase is invoked by hand",
+    "One task per run: long plans need many manual invocations",
+    "Requirements and plans are per-task working files — no maintained living spec",
+    "No worktree isolation or parallel orchestration: sub-agents review, but tasks run one after another",
+    "No hotfix path: the handoffs are slow when production is down",
+    "Young project with no tagged releases; skills change often",
+    "Scores assessed from the repository and docs on 2026-11-04 by an agent-toolkit contributor, so not an independent review"
+  ]
+}
